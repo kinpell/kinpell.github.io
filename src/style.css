@@ -3,4 +3,8 @@ body {
     background-size: cover;      
     background-repeat: no-repeat;
     background-position: center center;
+
+    display: grid;
+
+    font-family: Helvetica;
 }
