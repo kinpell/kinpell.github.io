@@ -1,10 +1,123 @@
-body {
-    background-image: url("img/backgroud.jpg");
-    background-size: cover;      
-    background-repeat: no-repeat;
-    background-position: center center;
-
-    display: grid;
-
-    font-family: Helvetica;
+:root {
+    --base: #da2f2f;
+    --black: #272727;
 }
+  
+html {
+    /* border-box box model allows us to add padding and border to our elements without increasing their size */
+    box-sizing: border-box;
+    /* A system font stack so things load nice and quick! */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+        Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 900;
+    font-size: 10px;
+    color: var(--black);
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+}
+
+/*
+We inherit box-sizing: border-box; from our <html> selector
+Apparently this is a bit better than applying box-sizing: border-box; directly to the * selector
+*/
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #140313;
+    background-image: url("img/Endless-Constellation.svg");
+    /* background by SVGBackgrounds.com */
+    background-size: 340px, auto;
+    min-height: calc(100vh - 100px);
+    margin: 50px;
+    background-position: fixed;
+    letter-spacing: -1px;
+    font-size: 15px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 5px 0;
+}
+
+/* .wrapper */
+
+.wrapper {
+    display: grid;
+    grid-gap: 20px;
+  }
+
+button {
+    background: var(--base);;
+    border: 0;
+    padding: 10px 20px;
+}
+
+/* Navigation */
+
+.menu ul {
+    display: grid;
+    grid-gap: 15px;
+    padding: 0;
+    list-style: none;
+    grid-template-columns: repeat(auto-fit, minmax(153px, 1fr));
+  }
+  
+  .menu a {
+    background: var(--base);
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+    color: var(--black);
+    text-transform: uppercase;
+    font-size: 20px;
+  }
+  
+  [aria-controls="menu-list"] {
+    display: none;
+  }
+
+  @media (max-width: 1000px) {
+    .menu {
+      order: -1;
+      perspective: 800px;
+    }
+    [aria-controls="menu-list"] {
+      display: block;
+      margin-bottom: 10px;
+    }
+  
+    .menu ul {
+      /* max-height: 0; */
+      /* overflow: hidden; */
+      transform: rotateX(91deg);
+      transition: all 0.5s;
+    }
+  
+    [aria-expanded="true"] ~ ul {
+      display: grid;
+      /* max-height: 500px; */
+      transform: rotateX(0deg);
+      /* transition: all 0.2s; */
+    }
+  
+    [aria-expanded="false"] .close {
+      display: none;
+    }
+  
+    [aria-expanded="true"] .close {
+      display: inline-block;
+    }
+  
+    [aria-expanded="true"] .open {
+      display: none;
+    }
+  
+  }

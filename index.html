@@ -7,6 +7,37 @@
     <link rel="stylesheet" type="text/css" href="src/style.css">
 </head>
 <body>
-    <h1>Under Construction! Comeback soon!</h1>
+    <div class="wrapper">
+        <nav class="menu">
+            <button aria-expanded="false" aria-controls="menu-list">
+                <span class="open">☰</span>
+                <span class="close">×</span>
+                Menu
+            </button>
+            <ul id="menu-list">
+                <li>
+                <a href="">Thecnologies</a>
+                </li>
+                <li>
+                <a href="">Projects</a>
+                </li>
+                <li>
+                <a href="">Contacts</a>
+            </ul>
+        </nav>
+    </div>
+
+    <script>
+        const navButton = document.querySelector('button[aria-expanded]');
+
+        function toggleNav({ target }) {
+        const expanded = target.getAttribute('aria-expanded') === 'true' || false;
+        navButton.setAttribute('aria-expanded', !expanded);
+        }
+
+        navButton.addEventListener('click', toggleNav);
+        
+    </script>
+
 </body>
 </html>
