@@ -95,17 +95,17 @@ button {
     }
   
     .menu ul {
-      /* max-height: 0; */
-      /* overflow: hidden; */
+      max-height: 0;
+      overflow: hidden;
       transform: rotateX(91deg);
-      transition: all 0.5s;
+      transition: all 0.3s;
     }
   
     [aria-expanded="true"] ~ ul {
       display: grid;
-      /* max-height: 500px; */
+      max-height: 500px;
       transform: rotateX(0deg);
-      /* transition: all 0.2s; */
+      transition: all 0.2s;
     }
   
     [aria-expanded="false"] .close {
