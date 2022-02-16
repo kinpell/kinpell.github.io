@@ -1,1 +1,0 @@
-# kinpell.github.io
